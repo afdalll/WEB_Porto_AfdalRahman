@@ -1,0 +1,231 @@
+/* Header */
+.header {
+    padding: 0 32px;
+    border-bottom: 1px solid #e8edf4;
+    background: #fff;
+    color: #172033;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 1360px;
+    min-height: 80px;
+    margin: 0 auto;
+}
+
+.header__brand {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 128px;
+    text-decoration: none;
+}
+
+.header__logo {
+    display: block;
+    width: 128px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header__menu-toggle {
+    display: none;
+}
+
+.header__nav {
+    flex: 1;
+    min-width: 0;
+}
+
+.header__nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__nav a {
+    position: relative;
+    display: block;
+    padding: 29px 10px 27px;
+    color: #596579;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 150ms ease;
+}
+
+.header__nav a::after {
+    position: absolute;
+    right: 9px;
+    bottom: 0;
+    left: 9px;
+    height: 2px;
+    background: #3b82f6;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 150ms ease;
+}
+
+.header__nav a:hover,
+.header__nav a:focus-visible {
+    color: #2563eb;
+}
+
+.header__nav a:hover::after,
+.header__nav a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.header__nav a[aria-current="page"] {
+    color: #1d4ed8;
+}
+
+.header__nav a[aria-current="page"]::after {
+    background: #14b8a6;
+    transform: scaleX(1);
+}
+
+.header__nav a:focus-visible,
+.header__brand:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    .header__inner {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .header__menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .header__menu-toggle:hover,
+    .header__menu-toggle:focus-visible {
+        background: #f1f5f9;
+    }
+
+    .header__menu-toggle:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    .header__menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        background: #172033;
+    }
+
+    .header__nav {
+        position: absolute;
+        z-index: 10;
+        top: 100%;
+        right: 0;
+        left: auto;
+        display: none;
+        width: min(260px, calc(100vw - 40px));
+        padding: 8px 0;
+        border: 1px solid #e8edf4;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 12px 24px rgb(23 32 51 / 10%);
+    }
+
+    .header__nav.is-open {
+        display: block;
+    }
+
+    .header__nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .header__nav a {
+        padding: 13px 20px;
+    }
+
+    .header__nav a::after {
+        right: auto;
+        bottom: 10px;
+        left: 8px;
+        width: 2px;
+        height: calc(100% - 20px);
+        transform: scaleY(0);
+    }
+
+    .header__nav a:hover::after,
+    .header__nav a:focus-visible::after,
+    .header__nav a[aria-current="page"]::after {
+        transform: scaleY(1);
+    }
+}
+
+@media (max-width: 560px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .header__inner {
+        gap: 4px 16px;
+    }
+}
+
+/* Body */
+:root {
+    color-scheme: light;
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f5f7fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    min-width: 0;
+    padding: 32px;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 24px 20px;
+    }
+}
+
+/* Footer */
+body > footer {
+    padding: 16px 32px;
+}
+
+@media (max-width: 700px) {
+    body > footer {
+        padding: 16px 20px;
+    }
+}

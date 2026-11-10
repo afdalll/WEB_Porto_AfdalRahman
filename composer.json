@@ -1,0 +1,13 @@
+{
+    "name": "acer-dan/web_porto_afdalrahman",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "afdalll",
+            "email": "rahmanafdal853@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.8"
+    }
+}
